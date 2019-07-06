@@ -1,0 +1,30 @@
+<div class="amb-container">
+  <div class="amb-login">
+    <form class="amb-login__form">
+      <mat-form-field *ngIf="!phoneSend" class="amb-login__input" [(ngModel)]="phone">
+        <input matInput placeholder="Հեռախոսահամար" [value]="phone">
+        <svg *ngIf="phone" class="amb-login__clear" width="20" height="20">
+          <title>Clear</title>
+          <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+        </svg>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="phoneSend" class="amb-login__input" [(ngModel)]="code">
+        <input matInput placeholder="Գաղտնաբառ" [value]="code">
+        <svg *ngIf="code" class="amb-login__clear" width="20" height="20">
+          <title>Clear</title>
+          <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+        </svg>
+      </mat-form-field>
+
+      <div class="amb-login__resend" *ngIf="phoneSend">
+        <span>Ուղարկել կրկին</span>
+      </div>
+
+      <button *ngIf="!phoneSend" class="amb-login__btn" mat-raised-button color="primary" (click)="phoneSend = !phoneSend">Ուղարկել</button>
+      <button *ngIf="phoneSend" class="amb-login__btn" mat-raised-button color="primary">Հաստատել</button>
+      <button *ngIf="phoneSend" class="amb-login__btn" mat-raised-button (click)="phoneSend = !phoneSend">Հետ</button>
+    </form>
+  </div>
+</div>
+
