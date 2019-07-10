@@ -15,4 +15,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  check(id): boolean {
+    return id;
+  }
+
 }

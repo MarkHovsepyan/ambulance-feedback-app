@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material';
@@ -38,6 +39,11 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import { SmsComponent } from './sms/sms.component';
 
+const appRoutes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'sms',  component: SmsComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +52,11 @@ import { SmsComponent } from './sms/sms.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }
+    ),
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatCheckboxModule,

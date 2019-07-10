@@ -1,26 +1,31 @@
 <div class="amb-container">
   <div class="amb-login">
+    <h3>Կանչի Որոնում</h3>
     <form class="amb-login__form">
-      <mat-form-field class="amb-login__input" [(ngModel)]="name">
-        <input matInput placeholder="Անուն" [value]="name">
-        <svg *ngIf="name" class="amb-login__clear" width="20" height="20">
-          <title>Clear</title>
-          <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
-        </svg>
+      <mat-form-field class="amb-login__input" >
+        <input matInput placeholder="Անուն" [(ngModel)]="name" name="name">
+        <button mat-button class="amb-login__clear" *ngIf="check(name)" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+          <svg class="amb-login__clear-icon">
+            <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+          </svg>
+        </button>
       </mat-form-field>
 
       <mat-form-field class="amb-login__input" >
-        <input matInput placeholder="Ազգանուն" [(ngModel)]="lastName">
-        <svg *ngIf="lastName" class="amb-login__clear" (click)="lastName=''" width="20" height="20">
-          <title>Clear</title>
-          <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
-        </svg>
+        <input matInput placeholder="Ազգանուն" [(ngModel)]="lastName" name="lastName">
+        <button mat-button class="amb-login__clear" *ngIf="check(lastName)" matSuffix mat-icon-button aria-label="Clear" (click)="lastName=''">
+          <svg class="amb-login__clear-icon">
+            <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+          </svg>
+        </button>
       </mat-form-field>
 
       <mat-form-field class="amb-login__input" >
-        <input matInput placeholder="ID" [(ngModel)]="ambId">
-        <button mat-button *ngIf="ambId" matSuffix mat-icon-button aria-label="Clear" (click)="ambId=''">
-          <mat-icon>close</mat-icon>
+        <input matInput placeholder="ID" [(ngModel)]="ambId" name="ambId">
+        <button mat-button class="amb-login__clear" *ngIf="check(ambId)" matSuffix mat-icon-button aria-label="Clear" (click)="ambId=''">
+          <svg class="amb-login__clear-icon">
+            <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+          </svg>
         </button>
       </mat-form-field>
 
@@ -28,7 +33,9 @@
         <textarea matInput placeholder="Կանչի Հասցեն"></textarea>
       </mat-form-field>
 
-      <button class="amb-login__btn" mat-raised-button color="primary">Հաջորդ</button>
+      <div class="amb-login__btn">
+        <button  mat-raised-button color="primary" routerLink="/sms" routerLinkActive="active">Հաջորդ</button>
+      </div>
     </form>
   </div>
 </div>
