@@ -38,17 +38,20 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import { SmsComponent } from './sms/sms.component';
+import { FormComponent } from './form/form.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'sms',  component: SmsComponent }
+  { path: 'sms',  component: SmsComponent },
+  { path: 'form',  component: FormComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SmsComponent
+    SmsComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

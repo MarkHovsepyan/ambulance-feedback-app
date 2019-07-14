@@ -1,0 +1,61 @@
+<div class="amb-login">
+  <h3>Հարցաշար</h3>
+  <form class="amb-login__form">
+    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
+    <mat-form-field class="amb-login__input" >
+      <fieldset class="rating">
+        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+      </fieldset>
+    </mat-form-field>
+
+    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
+    <mat-form-field class="amb-login__input" >
+      <input matInput placeholder="Անուն" [(ngModel)]="input1" name="input1">
+      <button mat-button class="amb-login__clear" *ngIf="check(input1)" matSuffix mat-icon-button aria-label="Clear" (click)="input1=''">
+        <svg class="amb-login__clear-icon">
+          <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+        </svg>
+      </button>
+    </mat-form-field>
+
+    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
+    <mat-form-field class="amb-login__input" >
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="radio1" name="radio1">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no" style="margin-left: 12px">No</mat-radio-button>
+      </mat-radio-group>
+    </mat-form-field>
+    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
+    <mat-form-field class="amb-login__input">
+      <textarea matInput placeholder="Կանչի Հասցեն" name="input3"></textarea>
+    </mat-form-field>
+
+    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
+    <mat-form-field class="amb-login__input" >
+      <input matInput placeholder="ID" [(ngModel)]="input2" name="input2">
+      <button mat-button class="amb-login__clear" *ngIf="check(input2)" matSuffix mat-icon-button aria-label="Clear" (click)="input2=''">
+        <svg class="amb-login__clear-icon">
+          <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+        </svg>
+      </button>
+    </mat-form-field>
+
+    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
+    <mat-form-field class="amb-login__input">
+      <textarea matInput placeholder="Կանչի Հասցեն" name="input4"></textarea>
+    </mat-form-field>
+
+    <div class="amb-login__btn">
+      <button  mat-raised-button color="primary">Հաստատել</button>
+    </div>
+  </form>
+</div>

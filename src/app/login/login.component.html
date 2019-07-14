@@ -1,41 +1,39 @@
-<div class="amb-container">
-  <div class="amb-login">
-    <h3>Կանչի Որոնում</h3>
-    <form class="amb-login__form">
-      <mat-form-field class="amb-login__input" >
-        <input matInput placeholder="Անուն" [(ngModel)]="name" name="name">
-        <button mat-button class="amb-login__clear" *ngIf="check(name)" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
-          <svg class="amb-login__clear-icon">
-            <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
-          </svg>
-        </button>
-      </mat-form-field>
+<div class="amb-login">
+  <h3>Կանչի Որոնում</h3>
+  <form class="amb-login__form">
+    <mat-form-field class="amb-login__input" >
+      <input matInput placeholder="Անուն" [(ngModel)]="name" name="name">
+      <button mat-button class="amb-login__clear" *ngIf="check(name)" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+        <svg class="amb-login__clear-icon">
+          <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+        </svg>
+      </button>
+    </mat-form-field>
 
-      <mat-form-field class="amb-login__input" >
-        <input matInput placeholder="Ազգանուն" [(ngModel)]="lastName" name="lastName">
-        <button mat-button class="amb-login__clear" *ngIf="check(lastName)" matSuffix mat-icon-button aria-label="Clear" (click)="lastName=''">
-          <svg class="amb-login__clear-icon">
-            <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
-          </svg>
-        </button>
-      </mat-form-field>
+    <mat-form-field class="amb-login__input" >
+      <input matInput placeholder="Ազգանուն" [(ngModel)]="lastName" name="lastName">
+      <button mat-button class="amb-login__clear" *ngIf="check(lastName)" matSuffix mat-icon-button aria-label="Clear" (click)="lastName=''">
+        <svg class="amb-login__clear-icon">
+          <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+        </svg>
+      </button>
+    </mat-form-field>
 
-      <mat-form-field class="amb-login__input" >
-        <input matInput placeholder="ID" [(ngModel)]="ambId" name="ambId">
-        <button mat-button class="amb-login__clear" *ngIf="check(ambId)" matSuffix mat-icon-button aria-label="Clear" (click)="ambId=''">
-          <svg class="amb-login__clear-icon">
-            <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
-          </svg>
-        </button>
-      </mat-form-field>
+    <mat-form-field class="amb-login__input" >
+      <input matInput placeholder="ID" [(ngModel)]="ambId" name="ambId">
+      <button mat-button class="amb-login__clear" *ngIf="check(ambId)" matSuffix mat-icon-button aria-label="Clear" (click)="ambId=''">
+        <svg class="amb-login__clear-icon">
+          <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+        </svg>
+      </button>
+    </mat-form-field>
 
-      <mat-form-field class="amb-login__input">
-        <textarea matInput placeholder="Կանչի Հասցեն"></textarea>
-      </mat-form-field>
+    <mat-form-field class="amb-login__input">
+      <textarea matInput placeholder="Կանչի Հասցեն"></textarea>
+    </mat-form-field>
 
-      <div class="amb-login__btn">
-        <button  mat-raised-button color="primary" routerLink="/sms" routerLinkActive="active">Հաջորդ</button>
-      </div>
-    </form>
-  </div>
+    <div class="amb-login__btn">
+      <button  mat-raised-button color="primary" routerLink="/sms" routerLinkActive="active">Հաջորդ</button>
+    </div>
+  </form>
 </div>
