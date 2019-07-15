@@ -16,6 +16,10 @@ export class FormComponent implements OnInit {
   check(id): boolean {
     return id;
   }
+  //
+  // changeRadio(e) {
+  //   this.radio1 = e;
+  // }
 
   ngOnInit() {
   }

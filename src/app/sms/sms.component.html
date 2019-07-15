@@ -1,7 +1,7 @@
 <div class="amb-login">
   <h3>Հեռախոսահամարի Հաստատում</h3>
   <form class="amb-login__form">
-    <mat-form-field *ngIf="!phoneSend" class="amb-login__input">
+    <mat-form-field appearance="outline" *ngIf="!phoneSend" class="amb-login__input">
       <span matPrefix>+374 &nbsp;</span>
       <input type="tel"  matInput placeholder="Հեռախոսահամար" [(ngModel)]="phone" name="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       <svg *ngIf="phone" class="amb-login__clear" (click)="phone = ''" width="20" height="20">
@@ -10,7 +10,7 @@
       </svg>
     </mat-form-field>
 
-    <mat-form-field *ngIf="phoneSend" class="amb-login__input">
+    <mat-form-field appearance="outline" *ngIf="phoneSend" class="amb-login__input">
       <input matInput placeholder="Գաղտնաբառ" [(ngModel)]="code" name="code">
       <svg *ngIf="code" class="amb-login__clear" (click)="code = ''" width="20" height="20">
         <title>Clear</title>

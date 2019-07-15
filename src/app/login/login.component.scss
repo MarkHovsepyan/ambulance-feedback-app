@@ -1,10 +1,13 @@
 .amb-login {
-  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  right: 10%;
   padding: 24px 48px;
-  transform: translateY(40%);
-  width: 560px;
-  background: rgba(243, 229, 245, 0.8);
+  transform: translateY(10%);
+  width: 420px;
+  background: rgba(207, 207, 207, 0.72);
   border-radius: 8px;
+  color: #4169af;
 
   .amb-login__form {
     min-width: 150px;
@@ -15,9 +18,21 @@
     margin-bottom: 12px;
     font-weight: bold;
     color: #373737;
+    ::ng-deep .mat-form-field-infix {
+      padding-right: 30px;
+    }
+  }
+
+  .amb-login__area-input {
+    width: 100%;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #373737;
   }
 
   .amb-login__clear {
+    position: absolute;
+    top: 10px;
     right: 8px;
     cursor: pointer;
     transform: scale(0.8);

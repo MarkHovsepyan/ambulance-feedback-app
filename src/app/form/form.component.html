@@ -1,8 +1,8 @@
 <div class="amb-login">
   <h3>Հարցաշար</h3>
   <form class="amb-login__form">
-    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
-    <mat-form-field class="amb-login__input" >
+    <span>Gnahatec Dhu thn t ytnt ntnt nt</span>
+    <mat-form-field appearance="outline" class="amb-login__input" >
       <fieldset class="rating">
         <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
         <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
@@ -17,8 +17,8 @@
       </fieldset>
     </mat-form-field>
 
-    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
-    <mat-form-field class="amb-login__input" >
+    <span>Gnahatec Dhu thn t ytnt ntnt nt</span>
+    <mat-form-field appearance="outline" class="amb-login__input" >
       <input matInput placeholder="Անուն" [(ngModel)]="input1" name="input1">
       <button mat-button class="amb-login__clear" *ngIf="check(input1)" matSuffix mat-icon-button aria-label="Clear" (click)="input1=''">
         <svg class="amb-login__clear-icon">
@@ -27,20 +27,21 @@
       </button>
     </mat-form-field>
 
-    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
-    <mat-form-field class="amb-login__input" >
-      <mat-radio-group aria-label="Select an option" [(ngModel)]="radio1" name="radio1">
+    <label >Gnahatec Dhu thn t ytnt ntnt nt</label>
+    <mat-form-field appearance="outline" class="amb-login__input" >
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="radio1" name="radio1" (change)="changeRadio($event)">
         <mat-radio-button value="yes">Yes</mat-radio-button>
         <mat-radio-button value="no" style="margin-left: 12px">No</mat-radio-button>
       </mat-radio-group>
     </mat-form-field>
-    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
-    <mat-form-field class="amb-login__input">
-      <textarea matInput placeholder="Կանչի Հասցեն" name="input3"></textarea>
+
+    <span *ngIf="radio1 === 'yes'">Խնդրում ենք մանրամասնել</span>
+    <mat-form-field appearance="outline" *ngIf="radio1 === 'yes'" class="amb-login__input">
+      <textarea matInput placeholder="Մանրամասն" name="input3"></textarea>
     </mat-form-field>
 
-    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
-    <mat-form-field class="amb-login__input" >
+    <span>Gnahatec Dhu thn t ytnt ntnt nt</span>
+    <mat-form-field appearance="outline" class="amb-login__input" >
       <input matInput placeholder="ID" [(ngModel)]="input2" name="input2">
       <button mat-button class="amb-login__clear" *ngIf="check(input2)" matSuffix mat-icon-button aria-label="Clear" (click)="input2=''">
         <svg class="amb-login__clear-icon">
@@ -49,8 +50,8 @@
       </button>
     </mat-form-field>
 
-    <h4>Gnahatec Dhu thn t ytnt ntnt nt</h4>
-    <mat-form-field class="amb-login__input">
+    <span>Gnahatec Dhu thn t ytnt ntnt nt</span>
+    <mat-form-field appearance="outline" class="amb-login__input">
       <textarea matInput placeholder="Կանչի Հասցեն" name="input4"></textarea>
     </mat-form-field>
 
