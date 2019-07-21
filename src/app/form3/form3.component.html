@@ -1,0 +1,23 @@
+<div class="amb-login">
+  <h3>Հարցաշար</h3>
+  <form class="amb-login__form">
+    <section class="amb-section">
+      <label id="amb-radio-group-label-7">Արդյոք տեղի է ունեցել կաշառք պահանջելու կամ ցանկանալու փորձ բրիգադի անդամների կողմից</label>
+      <mat-radio-group aria-labelledby="amb-radio-group-label-7" name="radioGroup-7"
+                       class="amb-section__item-group amb-section__item-group--row"
+                       [(ngModel)]="radioGroup7">
+        <mat-radio-button class="amb-section__item" [value]="true">Այո</mat-radio-button>
+        <mat-radio-button class="amb-section__item" [value]="false">Ոչ</mat-radio-button>
+      </mat-radio-group>
+    </section>
+    <section class="amb-section" *ngIf="radioGroup7">
+      <label id="amb-radio-group-label-8">Խնդրում ենք մանրամասնել</label>
+      <mat-form-field aria-labelledby="amb-radio-group-label-8" appearance="outline" class="amb-login__input">
+        <textarea matTextareaAutosize matAutosizeMinRows=10 matInput name="input8"></textarea>
+      </mat-form-field>
+    </section>
+    <div class="amb-login__btn">
+      <button mat-raised-button color="primary">Ուղարկել</button>
+    </div>
+  </form>
+</div>

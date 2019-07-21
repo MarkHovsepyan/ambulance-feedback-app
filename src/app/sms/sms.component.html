@@ -24,7 +24,7 @@
 
     <div class="amb-login__btn">
       <button *ngIf="!phoneSend" class="amb-login__btn" mat-raised-button color="primary" (click)="phoneSend = !phoneSend">Ուղարկել</button>
-      <button *ngIf="phoneSend" class="amb-login__btn" mat-raised-button color="primary" routerLink="/form" routerLinkActive="active">Հաստատել</button>
+      <button *ngIf="phoneSend" class="amb-login__btn" mat-raised-button color="primary" routerLink="/form" >Հաստատել</button>
       <button *ngIf="phoneSend" class="amb-login__btn" mat-raised-button (click)="phoneSend = !phoneSend">Հետ</button>
     </div>
   </form>

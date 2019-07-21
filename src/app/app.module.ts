@@ -36,14 +36,18 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SmsComponent } from './sms/sms.component';
 import { FormComponent } from './form/form.component';
+import { Form2Component } from './form2/form2.component';
+import { Form3Component } from './form3/form3.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'sms',  component: SmsComponent },
-  { path: 'form',  component: FormComponent }
+  { path: 'form',  component: FormComponent },
+  { path: 'form2',  component: Form2Component },
+  { path: 'form3',  component: Form3Component }
 ];
 
 @NgModule({
@@ -51,14 +55,16 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     SmsComponent,
-    FormComponent
+    FormComponent,
+    Form2Component,
+    Form3Component
   ],
   imports: [
     BrowserModule,
     RouterModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
+      {enableTracing: false}
     ),
     BrowserAnimationsModule,
     MatCheckboxModule,
@@ -92,7 +98,8 @@ const appRoutes: Routes = [
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

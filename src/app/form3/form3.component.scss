@@ -60,15 +60,18 @@
   flex-direction: column;
   align-content: center;
   margin-top: 12px;
-}
 
-.amb-section__item-group {
-  display: flex;
-  flex-direction: column;
-  margin: 15px 0;
-}
+  .amb-section__item-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    &.amb-section__item-group--row {
+      flex-direction: row;
+    }
+  }
 
-.amb-section__item {
-  text-transform: capitalize;
-  margin: 5px;
+  .amb-section__item {
+    text-transform: capitalize;
+    margin: 5px;
+  }
 }
