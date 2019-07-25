@@ -11,7 +11,7 @@ export class AppComponent implements  AfterViewInit{
   ngAfterViewInit(): void {
     const video = document.getElementById('video');
     video.addEventListener('loadedmetadata', () => {
-      video.currentTime = 12;
+     // video.currentTime = 12;
     }, false);
   }
 }

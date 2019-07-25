@@ -5,39 +5,43 @@
       <label id="amb-radio-group-label-2">Բրիգադ սպասելու տևողություն</label>
       <mat-radio-group aria-labelledby="amb-radio-group-label-2" name="radioGroup-2"
                        class="amb-section__item-group"
-                       [(ngModel)]="selectedWaitingTime">
+                       [(ngModel)]="this.Person.waitingTime">
         <mat-radio-button class="amb-section__item" *ngFor="let time of timeList" [value]="time">
           {{time}}
         </mat-radio-button>
       </mat-radio-group>
     </section>
     <section class="amb-section">
-      <h4>Կանչը սպասարկելու ընթացքում բրիգադի կողմից ցուցաբերած վերաբերմունքը</h4>
-      <label id="amb-radio-group-label-3">Ուշադիր և հարգալից էր պացիենտի նկատմամբ</label>
-      <mat-radio-group aria-labelledby="amb-radio-group-label-3" name="radioGroup-3"
-                       class="amb-section__item-group amb-section__item-group--row"
-                       [(ngModel)]="radioGroup3">
-        <mat-radio-button class="amb-section__item" [value]="Yes">Այո</mat-radio-button>
-        <mat-radio-button class="amb-section__item" [value]="No">Ոչ</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <h4>Կանչը սպասարկելու ընթացքում բրիգադի կողմից ցուցաբերած վերաբերմունքը</h4>
+        <label id="amb-radio-group-label-3">Ուշադիր և հարգալից էր պացիենտի նկատմամբ</label>
+        <mat-radio-group aria-labelledby="amb-radio-group-label-3" name="radioGroup-3"
+                         class="amb-section__item-group amb-section__item-group--row"
+                         [(ngModel)]="this.Person.serviceQuestion_1">
+          <mat-radio-button class="amb-section__item" value="Yes">Այո</mat-radio-button>
+          <mat-radio-button class="amb-section__item" value="No">Ոչ</mat-radio-button>
+        </mat-radio-group>
+      </mat-form-field>
+    </section>
+    <section class="amb-section">
       <label id="amb-radio-group-label-4">Լսե՞ց պացիենտի (կամ հարազատի) գանգատները</label>
       <mat-radio-group aria-labelledby="amb-radio-group-label-4" name="radioGroup-4"
                        class="amb-section__item-group amb-section__item-group--row"
-                       [(ngModel)]="radioGroup4">
-        <mat-radio-button class="amb-section__item" [value]="Yes">Այո</mat-radio-button>
-        <mat-radio-button class="amb-section__item" [value]="No">Ոչ</mat-radio-button>
+                       [(ngModel)]="this.Person.serviceQuestion_2">
+        <mat-radio-button class="amb-section__item" value="Yes">Այո</mat-radio-button>
+        <mat-radio-button class="amb-section__item" value="No">Ոչ</mat-radio-button>
       </mat-radio-group>
       <label id="amb-radio-group-label-5">Բավական ժամանակ տրամադրե՞ց պացիենտին</label>
       <mat-radio-group aria-labelledby="amb-radio-group-label-5" name="radioGroup-5"
                        class="amb-section__item-group amb-section__item-group--row"
-                       [(ngModel)]="radioGroup5">
-        <mat-radio-button class="amb-section__item" [value]="Yes">Այո</mat-radio-button>
-        <mat-radio-button class="amb-section__item" [value]="No">Ոչ</mat-radio-button>
+                       [(ngModel)]="this.Person.serviceQuestion_3">
+        <mat-radio-button class="amb-section__item" value="Yes">Այո</mat-radio-button>
+        <mat-radio-button class="amb-section__item" value="No">Ոչ</mat-radio-button>
       </mat-radio-group>
     </section>
     <section class="amb-section">
       <label id="amb-radio-group-label-6">Ընդհանուր առմամբ ինչպես կգնահատեք ՇԲՕ բրիգադի կողմից ցուցաբերված բուժօգնությունը</label>
-      <mat-form-field aria-labelledby="amb-radio-group-label-6" appearance="outline" class="amb-login__input">
+      <mat-form-field aria-labelledby="amb-radio-group-label-6" [(ngModel)]="this.Person.totalScore" appearance="outline" class="amb-login__input">
         <fieldset class="rating">
           <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Հիանալի - 5 stars"></label>
           <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Շատ լավ - 4.5 stars"></label>
@@ -53,7 +57,7 @@
       </mat-form-field>
     </section>
     <div class="amb-login__btn">
-      <button mat-raised-button color="primary" routerLink="/form3">Հաջորդ</button>
+      <button mat-raised-button color="primary" (click)="navigate()" (keydown.enter)="navigate()">Հաջորդ</button>
     </div>
   </form>
 </div>

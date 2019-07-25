@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form3.component.scss']
 })
 export class Form3Component implements OnInit {
-  public radioGroup7: boolean;
+  private Person: object = history.state.person;
+
+  sendData() {
+    console.log(this.Person);
+  }
 
   constructor() { }
 

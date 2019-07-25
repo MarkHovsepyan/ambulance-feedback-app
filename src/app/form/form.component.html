@@ -1,30 +1,30 @@
-<div class="amb-login">
+<div class="amb-login" xmlns:data="http://www.w3.org/1999/xhtml">
   <h3>Հարցաշար</h3>
   <form class="amb-login__form">
     <h4>կանչի պատճառը</h4>
     <section class="amb-section">
-      <mat-checkbox class="amb-section__item" [(ngModel)]="accident" name="radio0">Դժբախտ պատահար</mat-checkbox>
+      <mat-checkbox class="amb-section__item" [(ngModel)]="this.Person.wasAccident" name="radio0">Դժբախտ պատահար</mat-checkbox>
     </section>
     <section *ngIf="!accident" class="amb-section amb-radio__group">
       <label>Հանկարծակի առաջացած իրավիճակներ</label>
-      <mat-checkbox class="amb-section__item" name="option1" [(ngModel)]="option1">ցավ կրծքավանդակում</mat-checkbox>
-      <mat-checkbox class="amb-section__item" name="option2" [(ngModel)]="option2">ցավ որովայնի շրջանում</mat-checkbox>
-      <mat-checkbox class="amb-section__item" name="option3" [(ngModel)]="option3">արյունահոսություն</mat-checkbox>
-      <mat-checkbox class="amb-section__item" name="option4" [(ngModel)]="option4">բարձր ջերմություն</mat-checkbox>
-      <mat-checkbox class="amb-section__item" name="option5" [(ngModel)]="option5">ցնցումներ</mat-checkbox>
+      <mat-checkbox class="amb-section__item" name="option1" [(ngModel)]="this.Person.symptomOne">ցավ կրծքավանդակում</mat-checkbox>
+      <mat-checkbox class="amb-section__item" name="option2" [(ngModel)]="this.Person.symptomTwo">ցավ որովայնի շրջանում</mat-checkbox>
+      <mat-checkbox class="amb-section__item" name="option3" [(ngModel)]="this.Person.symptomThree">արյունահոսություն</mat-checkbox>
+      <mat-checkbox class="amb-section__item" name="option4" [(ngModel)]="this.Person.symptomFoure">բարձր ջերմություն</mat-checkbox>
+      <mat-checkbox class="amb-section__item" name="option5" [(ngModel)]="this.Person.symptomFive">ցնցումներ</mat-checkbox>
     </section>
     <section *ngIf="!accident" class="amb-section">
       <label id="amb-radio-group-label">Քրոնիկ հիվանդության սրացում</label>
       <mat-radio-group aria-labelledby="amb-radio-group-label" name="radioGroup-1"
                        class="amb-section__item-group"
-                       [(ngModel)]="selectedChronicIssue">
+                       [(ngModel)]="this.Person.selectedChronicIssue">
         <mat-radio-button class="amb-section__item" *ngFor="let issue of ChronicIssueList" [value]="issue">
           {{issue}}
         </mat-radio-button>
       </mat-radio-group>
     </section>
     <div class="amb-login__btn">
-      <button mat-raised-button color="primary" routerLink="/form2">Հաջորդ</button>
+      <button mat-raised-button color="primary" (click)="navigate()" (keydown.enter)="navigate()">Հաջորդ</button>
     </div>
   </form>
 </div>

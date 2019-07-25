@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -7,18 +7,10 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  public radio1;
   public accident = false;
-  public input1;
-  public input2;
-  public input3;
-  public input4;
   public title;
-  public option1;
-  public option2;
-  public option3;
-  public option4;
-  public option5;
+
+  private Person: object = history.state.person;
 
   ChronicIssueList: string[] = ['սիրտ-անոթային համակարգի խանգարումներ',
     'գլխուղեղր արյան շրջանառության խանգարումներ',
@@ -29,16 +21,16 @@ export class FormComponent implements OnInit {
     'ծննդաբերություն',
     'այլ հիվանդություններ'
   ];
-  selectedChronicIssue: string;
 
-  constructor() {}
+  constructor(private router: Router) {
+  }
 
   check(id): boolean {
     return id;
   }
 
-  changeRadio(e) {
-    console.log(e);
+  navigate() {
+    this.router.navigateByUrl('/form2', { state: {person: this.Person} });
   }
 
   ngOnInit() {

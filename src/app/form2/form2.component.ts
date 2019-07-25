@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, NavigationStart, Router} from '@angular/router';
+import {Observable} from 'rxjs';
+import {filter, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-form2',
@@ -6,16 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form2.component.scss']
 })
 export class Form2Component implements OnInit {
-  selectedWaitingTime: string;
   timeList: string[] = [
     'չի գերազանցում 15 րոպե',
     'չի գերազանցում 20 րոպե',
     'գերազանցում է 20 րոպե'
   ];
-  public radioGroup3: string;
-  public radioGroup4: string;
-  public radioGroup5: string;
-  constructor() { }
+  private Person: object = history.state.person;
+
+  constructor(private router: Router) {
+  }
+
+  navigate() {
+    this.router.navigateByUrl('/form3', { state: {person: this.Person} });
+  }
 
   ngOnInit() {
   }

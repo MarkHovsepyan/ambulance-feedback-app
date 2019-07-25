@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sms',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SmsComponent implements OnInit {
   public code;
-  public phone;
   public phoneSend = false;
+  private Person: object = history.state.person;
 
-  constructor() { }
+  navigate() {
+    this.router.navigateByUrl('/form', { state: {person: this.Person} });
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
