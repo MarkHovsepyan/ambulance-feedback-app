@@ -1,7 +1,81 @@
+.amb-popup-layout {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #e0e0e070;
+}
+
+.amb-popup {
+  position: absolute;
+  z-index: 11;
+  left: 50%;
+  top: 120px;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  width: 460px;
+  height: auto;
+  max-height: 560px;
+  background: white;
+  border-radius: 6px;
+
+  .amb-popup__item-group {
+    max-height: 510px;
+    overflow: hidden;
+    transition: overflow-y 2s linear;
+    &:hover {
+      margin-right: -8px;
+      overflow-y: auto;
+    }
+  }
+
+  .amb-popup__btn {
+    margin: 4px 0;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .amb-popup__item {
+    margin: 2px 0;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 99%;
+    height: 60px;
+    background: rgba(48, 63, 159, 0.88);
+    cursor: pointer;
+    &.amb-popup__item--selected {
+      background: #388E3C;
+    }
+  }
+
+  .amb-popup__header {
+    font-size: 17px;
+  }
+
+  .amb-popup__body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .amb-popup__time {
+    margin-right: 12px;
+  }
+
+  span {
+    color: #fff;
+  }
+}
+
 .amb-login {
   position: absolute;
   top: 0;
-  right: 10%;
+  right: 64px;
   padding: 24px 48px;
   transform: translateY(10%);
   width: 420px;
@@ -10,6 +84,7 @@
   color: #435daf;
 
   .amb-login__form {
+    position: relative;
     min-width: 150px;
   }
 
@@ -58,4 +133,14 @@
     display: flex;
     flex-direction: row-reverse;
   }
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.69);
+  border-radius: 10px;
 }

@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 export class SmsComponent implements OnInit {
   public code;
   public phoneSend = false;
-  private Person: object = history.state.person;
+  private Person: {[k: string]: any} = history.state.person;
 
   navigate() {
     this.router.navigateByUrl('/form', { state: {person: this.Person} });

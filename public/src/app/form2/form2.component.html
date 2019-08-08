@@ -12,16 +12,14 @@
       </mat-radio-group>
     </section>
     <section class="amb-section">
-      <mat-form-field>
         <h4>Կանչը սպասարկելու ընթացքում բրիգադի կողմից ցուցաբերած վերաբերմունքը</h4>
         <label id="amb-radio-group-label-3">Ուշադիր և հարգալից էր պացիենտի նկատմամբ</label>
         <mat-radio-group aria-labelledby="amb-radio-group-label-3" name="radioGroup-3"
-                         class="amb-section__item-group amb-section__item-group--row"
+                         class="amb-section__item-group amb-section__item-group--row" [ngModelOptions]="{standalone: true}"
                          [(ngModel)]="this.Person.serviceQuestion_1">
           <mat-radio-button class="amb-section__item" value="Yes">Այո</mat-radio-button>
           <mat-radio-button class="amb-section__item" value="No">Ոչ</mat-radio-button>
         </mat-radio-group>
-      </mat-form-field>
     </section>
     <section class="amb-section">
       <label id="amb-radio-group-label-4">Լսե՞ց պացիենտի (կամ հարազատի) գանգատները</label>
@@ -41,7 +39,7 @@
     </section>
     <section class="amb-section">
       <label id="amb-radio-group-label-6">Ընդհանուր առմամբ ինչպես կգնահատեք ՇԲՕ բրիգադի կողմից ցուցաբերված բուժօգնությունը</label>
-      <mat-form-field aria-labelledby="amb-radio-group-label-6" [(ngModel)]="this.Person.totalScore" appearance="outline" class="amb-login__input">
+      <div class="amb-login__input">
         <fieldset class="rating">
           <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Հիանալի - 5 stars"></label>
           <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Շատ լավ - 4.5 stars"></label>
@@ -54,7 +52,7 @@
           <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Շատ վատ - 1 star"></label>
           <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Ահավոր - 0.5 stars"></label>
         </fieldset>
-      </mat-form-field>
+      </div>
     </section>
     <div class="amb-login__btn">
       <button mat-raised-button color="primary" (click)="navigate()" (keydown.enter)="navigate()">Հաջորդ</button>

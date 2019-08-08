@@ -3,14 +3,14 @@
   <form class="amb-login__form">
     <h4>կանչի պատճառը</h4>
     <section class="amb-section">
-      <mat-checkbox class="amb-section__item" [(ngModel)]="this.Person.wasAccident" name="radio0">Դժբախտ պատահար</mat-checkbox>
+      <mat-checkbox class="amb-section__item" [(ngModel)]="accident" name="radio0">Դժբախտ պատահար</mat-checkbox>
     </section>
     <section *ngIf="!accident" class="amb-section amb-radio__group">
       <label>Հանկարծակի առաջացած իրավիճակներ</label>
       <mat-checkbox class="amb-section__item" name="option1" [(ngModel)]="this.Person.symptomOne">ցավ կրծքավանդակում</mat-checkbox>
       <mat-checkbox class="amb-section__item" name="option2" [(ngModel)]="this.Person.symptomTwo">ցավ որովայնի շրջանում</mat-checkbox>
       <mat-checkbox class="amb-section__item" name="option3" [(ngModel)]="this.Person.symptomThree">արյունահոսություն</mat-checkbox>
-      <mat-checkbox class="amb-section__item" name="option4" [(ngModel)]="this.Person.symptomFoure">բարձր ջերմություն</mat-checkbox>
+      <mat-checkbox class="amb-section__item" name="option4" [(ngModel)]="this.Person.symptomFour">բարձր ջերմություն</mat-checkbox>
       <mat-checkbox class="amb-section__item" name="option5" [(ngModel)]="this.Person.symptomFive">ցնցումներ</mat-checkbox>
     </section>
     <section *ngIf="!accident" class="amb-section">

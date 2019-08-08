@@ -55,4 +55,8 @@
     margin-top: -24px;
     text-decoration: underline;
   }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-prefix  {
+    top: 0;
+  }
 }

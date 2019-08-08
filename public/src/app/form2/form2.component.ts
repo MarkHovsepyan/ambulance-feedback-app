@@ -14,7 +14,9 @@ export class Form2Component implements OnInit {
     'չի գերազանցում 20 րոպե',
     'գերազանցում է 20 րոպե'
   ];
-  private Person: object = history.state.person;
+  private Person: {[k: string]: any} = history.state.person;
+
+  public starRating = 0;
 
   constructor(private router: Router) {
   }

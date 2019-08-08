@@ -4,31 +4,25 @@
     <mat-form-field appearance="outline" class="amb-login__input">
       <mat-label>Անուն</mat-label>
       <input matInput [(ngModel)]="this.Person.firstName" name="name">
-      <button mat-button class="amb-login__clear" *ngIf="check(name)" matSuffix mat-icon-button aria-label="Clear"
-              (click)="name=''">
-        <svg class="amb-login__clear-icon">
-          <path
-            d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
-        </svg>
-      </button>
+      <svg class="amb-login__clear" *ngIf="check(this.Person.firstName)" (click)="this.Person.firstName=''" width="20" height="20">
+        <path
+          d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+      </svg>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="amb-login__input">
       <mat-label>Ազգանուն</mat-label>
       <input matInput [(ngModel)]="this.Person.lastName" name="lastName">
-      <button mat-button class="amb-login__clear" *ngIf="check(lastName)" matSuffix mat-icon-button aria-label="Clear"
-              (click)="lastName=''">
-        <svg class="amb-login__clear-icon">
-          <path
-            d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
-        </svg>
-      </button>
+      <svg class="amb-login__clear" *ngIf="check(this.Person.lastName)" (click)="this.Person.lastName=''" width="20" height="20">
+        <path
+          d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+      </svg>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="amb-login__input">
       <mat-label>ID</mat-label>
       <input matInput [(ngModel)]="this.Person.ambID" name="ambId">
-      <svg class="amb-login__clear" *ngIf="check(ambId)" (click)="ambId=''" width="20" height="20">
+      <svg class="amb-login__clear" *ngIf="check(this.Person.ambID)" (click)="this.Person.ambID=''" width="20" height="20">
         <path
           d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
       </svg>
@@ -40,7 +34,25 @@
     </mat-form-field>
 
     <div class="amb-login__btn">
-      <button mat-raised-button color="primary" (click)="navigate()" (keydown.enter)="navigate()">Հաջորդ</button>
+      <button mat-raised-button color="primary" (click)="openPopup()">Փնտրել</button>
     </div>
   </form>
+</div>
+<div class="amb-popup-layout" *ngIf="isPopupOpen"></div>
+<div class="amb-popup" *ngIf="isPopupOpen">
+  <div class="amb-popup__item-group">
+    <div *ngFor="let item of itemList, let i = index" class="amb-popup__item" (click)="selectItem(i)" [ngClass]="{'amb-popup__item--selected' : i === selectedItemId}">
+        <div class="amb-popup__header">
+          <span>{{item.F_name}}</span>
+          <span style="padding-left: 8px;">{{item.L_name}}</span>
+        </div>
+        <div class="amb-popup__body">
+          <div class="amb-popup__id"><span>{{item.id}}</span></div>
+          <div class="amb-popup__time"><span>{{item.date}}</span></div>
+        </div>
+    </div>
+  </div>
+  <div class="amb-popup__btn">
+    <button mat-raised-button color="primary" (click)="navigate()" (keydown.enter)="navigate()">Հաստատել</button>
+  </div>
 </div>

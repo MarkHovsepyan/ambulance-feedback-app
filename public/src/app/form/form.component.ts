@@ -10,7 +10,7 @@ export class FormComponent implements OnInit {
   public accident = false;
   public title;
 
-  private Person: object = history.state.person;
+  private Person: {[k: string]: any}  = history.state.person;
 
   ChronicIssueList: string[] = ['սիրտ-անոթային համակարգի խանգարումներ',
     'գլխուղեղր արյան շրջանառության խանգարումներ',
@@ -30,6 +30,7 @@ export class FormComponent implements OnInit {
   }
 
   navigate() {
+    this.Person.wasAccident = this.accident;
     this.router.navigateByUrl('/form2', { state: {person: this.Person} });
   }
 
