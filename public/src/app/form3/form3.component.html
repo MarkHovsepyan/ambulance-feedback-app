@@ -6,20 +6,22 @@
       <mat-radio-group aria-labelledby="amb-radio-group-label-7" name="radioGroup-7"
                        class="amb-section__item-group amb-section__item-group--row"
                        [(ngModel)]="this.Person.corruptionHappened">
-        <mat-radio-button class="amb-section__item" [value]="true">Այո</mat-radio-button>
-        <mat-radio-button class="amb-section__item" [value]="false">Ոչ</mat-radio-button>
+        <mat-radio-button class="amb-section__item" value="Yes">Այո</mat-radio-button>
+        <mat-radio-button class="amb-section__item" value="No">Ոչ</mat-radio-button>
       </mat-radio-group>
     </section>
-    <section class="amb-section" *ngIf="this.Person.corruptionHappened">
+    <section class="amb-section" *ngIf="this.Person.corruptionHappened === 'Yes'">
       <label id="amb-radio-group-label-8">Խնդրում ենք մանրամասնել</label>
       <mat-form-field aria-labelledby="amb-radio-group-label-8" appearance="outline" class="amb-login__input">
         <label>
-          <textarea [(ngModel)]="this.Person.corruptionDatailes" matTextareaAutosize matAutosizeMinRows=10 matInput name="input8"></textarea>
+          <textarea [(ngModel)]="this.Person.corruptionDetails" matTextareaAutosize matAutosizeMinRows=10 matInput name="input8"></textarea>
         </label>
       </mat-form-field>
     </section>
     <div class="amb-login__btn">
-      <button mat-raised-button color="primary" (click)="sendData()" (keydown.enter)="sendData()">Ուղարկել</button>
+      <button mat-raised-button color="primary" (click)="sendData()" (keydown.enter)="sendData()"
+              [disabled]="!(this.Person.corruptionHappened === 'No' || this.Person.corruptionHappened === 'Yes' && this.Person.corruptionDetails)">Ուղարկել</button>
+      <button mat-raised-button (click)="goBack()" (keydown.escape)="goBack()">Նախորդ</button>
     </div>
   </form>
 </div>

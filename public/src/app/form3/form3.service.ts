@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import {Form3Component} from './form3.component';
 
 class Person {
-  public formData: Form3Component = new Form3Component();
+  // public formData: Form3Component = new Form3Component();
   // name: this.formData.Person;
 }
 

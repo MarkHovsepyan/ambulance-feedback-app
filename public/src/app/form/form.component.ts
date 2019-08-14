@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
-  public accident = false;
+export class FormComponent {
   public title;
 
-  private Person: {[k: string]: any}  = history.state.person;
+  private Person: { [k: string]: any };
 
   ChronicIssueList: string[] = ['սիրտ-անոթային համակարգի խանգարումներ',
     'գլխուղեղր արյան շրջանառության խանգարումներ',
@@ -23,6 +22,9 @@ export class FormComponent implements OnInit {
   ];
 
   constructor(private router: Router) {
+    if (history.state.person) {
+      this.Person = history.state.person;
+    } else {this.Person = {}; }
   }
 
   check(id): boolean {
@@ -30,11 +32,27 @@ export class FormComponent implements OnInit {
   }
 
   navigate() {
-    this.Person.wasAccident = this.accident;
-    this.router.navigateByUrl('/form2', { state: {person: this.Person} });
-  }
-
-  ngOnInit() {
+    if (this.Person.wasAccident) {
+      if (this.Person.selectedChronicIssue) {
+        delete this.Person.selectedChronicIssue;
+      }
+      if (this.Person.symptomOne) {
+        delete this.Person.symptomOne;
+      }
+      if (this.Person.symptomTwo) {
+        delete this.Person.symptomTwo;
+      }
+      if (this.Person.symptomThree) {
+        delete this.Person.symptomThree;
+      }
+      if (this.Person.symptomFour) {
+        delete this.Person.symptomFour;
+      }
+      if (this.Person.symptomFive) {
+        delete this.Person.symptomFive;
+      }
+    }
+    this.router.navigateByUrl('/form2', {state: {person: this.Person}});
   }
 
 }

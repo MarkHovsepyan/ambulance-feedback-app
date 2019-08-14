@@ -1,0 +1,10 @@
+.amb-rating {
+  margin-top: 8px;
+  user-select: none;
+  mat-icon {
+    cursor: pointer;
+  }
+  .amb-rating__filled {
+    color: yellow;
+  }
+}

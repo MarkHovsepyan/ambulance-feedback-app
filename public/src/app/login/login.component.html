@@ -3,29 +3,41 @@
   <form class="amb-login__form">
     <mat-form-field appearance="outline" class="amb-login__input">
       <mat-label>Անուն</mat-label>
-      <input matInput [(ngModel)]="this.Person.firstName" name="name">
+      <input matInput [(ngModel)]="this.Person.firstName" name="name" [formControl]="nameFormControl"
+             [errorStateMatcher]="nameError">
       <svg class="amb-login__clear" *ngIf="check(this.Person.firstName)" (click)="this.Person.firstName=''" width="20" height="20">
         <path
           d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
       </svg>
+      <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="amb-login__input">
       <mat-label>Ազգանուն</mat-label>
-      <input matInput [(ngModel)]="this.Person.lastName" name="lastName">
+      <input matInput [(ngModel)]="this.Person.lastName" name="lastName" [formControl]="surnameFormControl"
+             [errorStateMatcher]="surnameError">
       <svg class="amb-login__clear" *ngIf="check(this.Person.lastName)" (click)="this.Person.lastName=''" width="20" height="20">
         <path
           d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
       </svg>
+      <mat-error *ngIf="surnameFormControl.hasError('required')">
+        Surname is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="amb-login__input">
       <mat-label>ID</mat-label>
-      <input matInput [(ngModel)]="this.Person.ambID" name="ambId">
+      <input matInput [(ngModel)]="this.Person.ambID" name="ambId" [formControl]="idFormControl"
+             [errorStateMatcher]="idError">
       <svg class="amb-login__clear" *ngIf="check(this.Person.ambID)" (click)="this.Person.ambID=''" width="20" height="20">
         <path
           d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
       </svg>
+      <mat-error *ngIf="idFormControl.hasError('required')">
+        ID is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="amb-login__area-input">
@@ -34,11 +46,11 @@
     </mat-form-field>
 
     <div class="amb-login__btn">
-      <button mat-raised-button color="primary" (click)="openPopup()">Փնտրել</button>
+      <button mat-raised-button color="primary" (click)="openClosePopup()">Փնտրել</button>
     </div>
   </form>
 </div>
-<div class="amb-popup-layout" *ngIf="isPopupOpen"></div>
+<div class="amb-popup-layout" *ngIf="isPopupOpen" (click)="openClosePopup()"></div>
 <div class="amb-popup" *ngIf="isPopupOpen">
   <div class="amb-popup__item-group">
     <div *ngFor="let item of itemList, let i = index" class="amb-popup__item" (click)="selectItem(i)" [ngClass]="{'amb-popup__item--selected' : i === selectedItemId}">

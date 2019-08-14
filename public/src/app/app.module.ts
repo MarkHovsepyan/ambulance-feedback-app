@@ -41,6 +41,7 @@ import { SmsComponent } from './sms/sms.component';
 import { FormComponent } from './form/form.component';
 import { Form2Component } from './form2/form2.component';
 import { Form3Component } from './form3/form3.component';
+import { StarRatingComponent } from './star-rating/star-dating.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -57,7 +58,8 @@ const appRoutes: Routes = [
     SmsComponent,
     FormComponent,
     Form2Component,
-    Form3Component
+    Form3Component,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-login',
@@ -11,9 +20,32 @@ export class LoginComponent implements OnInit {
   private isPopupOpen = false;
 
   private itemList = [];
-  public selectedItemId: number;
+  public selectedItemId = -1;
+  // Validation check
+  nameFormControl = new FormControl('', [
+    Validators.required
+  ]);
 
-  constructor(private router: Router) { }
+  nameError = new MyErrorStateMatcher();
+
+  surnameFormControl = new FormControl('', [
+    Validators.required
+  ]);
+
+  surnameError = new MyErrorStateMatcher();
+
+  idFormControl = new FormControl('', [
+    Validators.required
+  ]);
+
+  idError = new MyErrorStateMatcher();
+  // ---
+
+  constructor(private router: Router) {
+    if (history.state.person) {
+      this.Person = history.state.person;
+    }
+  }
 
   ngOnInit() {
     this.itemList = [
@@ -39,8 +71,10 @@ export class LoginComponent implements OnInit {
     return id;
   }
 
-  openPopup() {
-    this.isPopupOpen = !this.isPopupOpen;
+  openClosePopup() {
+    if (!this.nameFormControl.invalid && !this.surnameFormControl.invalid && !this.idFormControl.invalid) {
+      this.isPopupOpen = !this.isPopupOpen;
+    }
   }
 
   selectItem(index) {
@@ -48,8 +82,9 @@ export class LoginComponent implements OnInit {
   }
 
   navigate() {
-    console.log(this.Person);
-    this.router.navigateByUrl('/sms', { state: {person: this.Person}  });
+    if (this.selectedItemId >= 0) {
+      this.router.navigateByUrl('/sms', { state: {person: this.Person}  });
+    }
   }
 
 }

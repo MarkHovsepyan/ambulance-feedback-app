@@ -3,19 +3,31 @@
   <form class="amb-login__form">
     <mat-form-field appearance="outline" *ngIf="!phoneSend" class="amb-login__input">
       <span matPrefix>+374 &nbsp;</span>
-      <input type="tel"  matInput placeholder="Հեռախոսահամար" [(ngModel)]="this.Person.phoneNumber" name="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-      <svg *ngIf="phone" class="amb-login__clear" (click)="phone = ''" width="20" height="20">
+      <input type="tel"  matInput placeholder="Հեռախոսահամար" [(ngModel)]="this.Person.phoneNumber" name="phone"
+             onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+             [formControl]="phoneNumberFormControl"
+             [errorStateMatcher]="phoneNumberError">
+      <svg *ngIf="this.Person.phoneNumber" class="amb-login__clear" (click)="this.Person.phoneNumber = ''" width="20" height="20">
         <title>Clear</title>
         <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
       </svg>
+      <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
+        Phone is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" *ngIf="phoneSend" class="amb-login__input">
-      <input matInput placeholder="Գաղտնաբառ" [(ngModel)]="code" name="code">
+      <input matInput placeholder="Գաղտնաբառ" [(ngModel)]="code" name="code"
+             onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+             [formControl]="smsFormControl"
+             [errorStateMatcher]="smsError">
       <svg *ngIf="code" class="amb-login__clear" (click)="code = ''" width="20" height="20">
         <title>Clear</title>
         <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
       </svg>
+      <mat-error *ngIf="smsFormControl.hasError('required')">
+        Please insert <strong>code</strong>
+      </mat-error>
     </mat-form-field>
 
     <div class="amb-login__resend" *ngIf="phoneSend">
@@ -23,7 +35,7 @@
     </div>
 
     <div class="amb-login__btn">
-      <button *ngIf="!phoneSend" class="amb-login__btn" mat-raised-button color="primary" (click)="phoneSend = !phoneSend" (keydown.enter)="phoneSend = !phoneSend">Ուղարկել</button>
+      <button *ngIf="!phoneSend" class="amb-login__btn" mat-raised-button color="primary" (click)="sendingPhoneNumber()" (keydown.enter)="sendingPhoneNumber()">Ուղարկել</button>
       <button *ngIf="phoneSend" class="amb-login__btn" mat-raised-button color="primary" (click)="navigate()" (keydown.enter)="navigate()">Հաստատել</button>
       <button *ngIf="phoneSend" class="amb-login__btn" mat-raised-button (click)="phoneSend = !phoneSend">Հետ</button>
     </div>

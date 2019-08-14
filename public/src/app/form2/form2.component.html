@@ -39,23 +39,13 @@
     </section>
     <section class="amb-section">
       <label id="amb-radio-group-label-6">Ընդհանուր առմամբ ինչպես կգնահատեք ՇԲՕ բրիգադի կողմից ցուցաբերված բուժօգնությունը</label>
-      <div class="amb-login__input">
-        <fieldset class="rating">
-          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Հիանալի - 5 stars"></label>
-          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Շատ լավ - 4.5 stars"></label>
-          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Բավականին լավ - 4 stars"></label>
-          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Լավ - 3.5 stars"></label>
-          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Միքիչ լավ - 3 stars"></label>
-          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Բավարար - 2.5 stars"></label>
-          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Վատ - 2 stars"></label>
-          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Բավականին վատ - 1.5 stars"></label>
-          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Շատ վատ - 1 star"></label>
-          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Ահավոր - 0.5 stars"></label>
-        </fieldset>
-      </div>
+      <app-star-rating [(ngModel)]="this.Person.totalRating" name="star"></app-star-rating>
     </section>
     <div class="amb-login__btn">
-      <button mat-raised-button color="primary" (click)="navigate()" (keydown.enter)="navigate()">Հաջորդ</button>
+      <button mat-raised-button color="primary" (click)="navigate()" (keydown.enter)="navigate()"
+      [disabled]="!(this.Person.waitingTime && this.Person.serviceQuestion_1 &&
+      this.Person.serviceQuestion_2 && this.Person.serviceQuestion_3)">Հաջորդ</button>
+      <button mat-raised-button (click)="goBack()" (keydown.escape)="goBack()">Նախորդ</button>
     </div>
   </form>
 </div>
