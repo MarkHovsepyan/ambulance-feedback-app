@@ -3,22 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2591f425-6bea-40a4-ae5d-557279763be4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/form/form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/form/form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/form/form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/form/form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/form2/form2.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/form2/form2.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/form2/form2.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/form2/form2.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/form2/form2.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/form2/form2.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/form3/form3.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/form3/form3.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/form3/form3.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/form3/form3.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/form3/form3.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/form3/form3.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/form3/form3.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/form3/form3.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/login/login.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/src/app/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/login/login.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/sms/sms.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/sms/sms.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/sms/sms.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/sms/sms.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/src/app/sms/sms.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/app/sms/sms.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +146,9 @@
       <workItem from="1565696244662" duration="1871000" />
       <workItem from="1565782357700" duration="2728000" />
       <workItem from="1565803433130" duration="1343000" />
-      <workItem from="1565813953609" duration="6391000" />
+      <workItem from="1565813953609" duration="6639000" />
+      <workItem from="1565867950498" duration="595000" />
+      <workItem from="1565880152443" duration="1604000" />
     </task>
     <servers />
   </component>

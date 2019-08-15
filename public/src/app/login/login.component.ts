@@ -18,6 +18,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class LoginComponent implements OnInit {
   private Person: {[k: string]: any} = {};
   private isPopupOpen = false;
+  public noData = false;
 
   private itemList = [];
   public selectedItemId = -1;

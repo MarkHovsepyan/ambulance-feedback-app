@@ -52,7 +52,8 @@
 </div>
 <div class="amb-popup-layout" *ngIf="isPopupOpen" (click)="openClosePopup()"></div>
 <div class="amb-popup" *ngIf="isPopupOpen">
-  <div class="amb-popup__item-group">
+  <div *ngIf="noData" class="amb-popup__item amb-popup__item--no-data"></div>
+  <div *ngIf="!noData" class="amb-popup__item-group">
     <div *ngFor="let item of itemList, let i = index" class="amb-popup__item" (click)="selectItem(i)" [ngClass]="{'amb-popup__item--selected' : i === selectedItemId}">
         <div class="amb-popup__header">
           <span>{{item.F_name}}</span>
@@ -64,7 +65,7 @@
         </div>
     </div>
   </div>
-  <div class="amb-popup__btn">
+  <div *ngIf="!noData" class="amb-popup__btn">
     <button mat-raised-button color="primary" (click)="navigate()" (keydown.enter)="navigate()">Հաստատել</button>
   </div>
 </div>

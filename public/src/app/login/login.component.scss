@@ -53,6 +53,13 @@
     &.amb-popup__item--selected {
       background: #388E3C;
     }
+    &.amb-popup__item--no-data {
+      height: 220px;
+      background: url("../../assets/no-data.png") no-repeat;
+      background-size: contain;
+      background-position-x: center;
+      cursor: default;
+    }
   }
 
   .amb-popup__header {
